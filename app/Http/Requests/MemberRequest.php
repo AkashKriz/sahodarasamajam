@@ -4,7 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MemberRequest extends FormRequest
+class MemberRequest extends Request
+
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +14,7 @@ class MemberRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
