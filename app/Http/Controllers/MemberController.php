@@ -51,7 +51,7 @@ class MemberController extends Controller
 	 }
 public function edit($id)
 {
-dd('shows');
+
 }
         
 public function show()

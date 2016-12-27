@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 #route for members
 Route::resource ('members', 'MemberController');
+#route for life members
+Route::resource('LifeTime', 'LifeTimeController');
