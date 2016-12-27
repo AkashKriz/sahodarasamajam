@@ -16,8 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index');
-Route::get('/logout','Auth\AuthController@logout');
+
+#route for members
 Route::resource('/members','MemberController');
+#route for life time members
 Route::resource('/lifetime', 'LifeTimeController');
-Auth::routes();
+
 
