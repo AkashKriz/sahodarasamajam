@@ -10,13 +10,13 @@ class MemberController extends Controller
    {
 	  $member = new Member;
 	  $member = $member->get();
-	 return view("members.list_member",compact('member'));
+	 return view("backend.members.list_member",compact('member'));
    }
    
    public function create()
    {
 	   
-	   return view('members.add_member');
+	   return view('backend.members.add_member');
    }
    public function store(MemberRequest $requestData)
    {
