@@ -8,7 +8,7 @@
   
   <div class="box-body">
       
-      <form role="form" action="members/" method="POST" name="form1">
+      <form role="form" action="{{url('members/')}}" method="POST" name="form1">
         
         <div class="form-group">
           <label for="firstname">First Name</label>
