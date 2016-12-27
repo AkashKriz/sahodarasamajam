@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Member;
-//use App\Http\Requests\MemberRequest;
+use App\Http\Requests\MemberRequest;
 use Illuminate\Support\Facades\Redirect;
 class MemberController extends Controller
 {
@@ -18,7 +18,7 @@ class MemberController extends Controller
 	   
 	   return view('members.add_member');
    }
-   public function store(Request $requestData)
+   public function store(MemberRequest $requestData)
    {
 	  $user = new Member;
 	  $user->firstname = $requestData['firstname'];
@@ -51,9 +51,34 @@ class MemberController extends Controller
 	 }
 public function edit($id)
 {
-
+	
+$member = new Member;
+$member = $member->find($id);
+return view ('lifetime.edit_lifetime', compact('member'));
 }
         
 public function show()
 {}
+
+public function update(MemberRequest $requestData)
+{
+	
+$member = new Member;
+$member = $member->find($id);	
+
+	  $member->firstname = $requestData['firstname'];
+	  $member->lastname =  $requestData['lastname'];
+	  $member->age = $requestData['age'];
+	  $member->dob = $requestData['dob'];
+	  $member->designation = $requestData['designation'];
+	  $member->lifetime = $requestData['lifetime'];
+	
+	  $member->address = $requestData['address'];
+	  
+	    $member->mobileno = $requestData['mobileno'];
+		 $member->email = $requestData['email'];
+		 $member->save();
+		 
+}
+
 }
