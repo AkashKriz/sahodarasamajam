@@ -62,7 +62,7 @@ public function show()
 
 public function update(MemberRequest $requestData)
 {
-	
+dd('shows');
 $member = new Member;
 $member = $member->find($id);	
 
@@ -78,6 +78,7 @@ $member = $member->find($id);
 	    $member->mobileno = $requestData['mobileno'];
 		 $member->email = $requestData['email'];
 		 $member->save();
+		 
 		 
 }
 
