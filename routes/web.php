@@ -22,4 +22,4 @@ Route::resource('/members','MemberController');
 #route for life time members
 Route::resource('/lifetime', 'LifeTimeController');
 
-
+Route::resource('/party','PartyController');
