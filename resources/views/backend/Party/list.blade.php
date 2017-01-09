@@ -32,7 +32,7 @@
                     <td>{!! $member->mobileno !!}</td>
                     <td>{!! $member->email !!}</td>
                     <td>{!! $member->address !!}</td>
-                    <td><center><input type="checkbox" name="party" value="yes"/></center></td>
+                    <td><center><input type="checkbox" id="party" name="party" value="yes" onclick="party()"/></center></td>
                 </tr>
 
                    <?php $i++ ?>
@@ -44,3 +44,11 @@
 
 </div>
 @endsection
+<script type = "text/javascript">
+function party(){
+       var chkYes = document.getElementById("party");
+       dd(chkYes);
+        window.location= '{{url("party/")}}/?party='+party;
+        }
+    });
+</script>
