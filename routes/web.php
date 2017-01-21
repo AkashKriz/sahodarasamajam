@@ -14,8 +14,12 @@
 Route::get('/', function () {
     return view('frontend.index');
 });
-
-Route::get('/home', 'HomeController@index');
+Route::get ('/register','RegistrationController@register');
+Route::post('/register','RegistrationController@postRegister');
+Route::get('/login' , 'LoginController@login');
+Route::post('/login','LoginController@postLogin');
+Route::post('/logout','LoginController@logout');
+Route::get('/earnings','AdminController@earnings')-> middleware('admin');
 
 #route for members
 Route::resource('/members','MemberController');
@@ -23,3 +27,5 @@ Route::resource('/members','MemberController');
 Route::resource('/lifetime', 'LifeTimeController');
 
 Route::resource('/party','PartyController');
+Route::get('/home', 'HomeController@index');
+
